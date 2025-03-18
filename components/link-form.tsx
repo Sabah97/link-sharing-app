@@ -156,10 +156,12 @@ export default function LinksForm({ links, setLinks }: LinksFormProps) {
 
         {links.length === 0 ? (
           <div className="bg-gray-50 rounded-lg p-8 text-center">
-            <h3 className="font-medium text-lg mb-2">Let's get you started</h3>
+            <h3 className="font-medium text-lg mb-2">
+              Let&apos;s get you started
+            </h3>
             <p className="text-muted-foreground mb-6">
-              Use the "Add new link" button to get started. Once you have more
-              than one link, you can reorder and edit them.
+              Use the &quot;Add new link&quot; button to get started. Once you
+              have more than one link, you can reorder and edit them.
             </p>
           </div>
         ) : (
@@ -317,6 +319,7 @@ function isValidUrl(url: string, platform: string): boolean {
       (platformLower === "devto" && hostname.includes("dev.to"))
     );
   } catch (e) {
+    console.error("Invalid URL:", e);
     return false;
   }
 }

@@ -9,7 +9,7 @@ import type { Link as LinkType, ProfileData } from "../../../lib/types";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Preview() {
-  const { toast } = useToast();
+  const toast = useToast();
   const [links, setLinks] = useState<LinkType[]>([]);
   const [profileData, setProfileData] = useState<ProfileData>({
     firstName: "",
@@ -37,7 +37,7 @@ export default function Preview() {
     navigator.clipboard.writeText(window.location.href);
     toast({
       title: "Link copied!",
-      description: "Your profile link has been copied to clipboard",
+      // description: "Your profile link has been copied to clipboard",
     });
   };
 
